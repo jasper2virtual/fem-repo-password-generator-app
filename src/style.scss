@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    @font-face {
+        font-family: 'jb-mono';
+        src: url('/src/assets/fonts/JetBrainsMono-VariableFont_wght.ttf');
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'jb-mono';
+        src: url('/src/assets/fonts/JetBrainsMono-Italic-VariableFont_wght.ttf');
+        font-style: italic;
+    }
+
+    html{
+        @apply font-jb-mono;
+    }
+}
+
+@layer utilities{
+    .text-app-heading-l{
+        @apply text-[calc(32rem/16)] font-bold;
+    }
+    .text-app-heading-m{
+        @apply text-[calc(24rem/16)] font-bold;
+    }
+    .text-app-body-m{
+        @apply text-[calc(18rem/16)] font-bold;
+    }
+}
