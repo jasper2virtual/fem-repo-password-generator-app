@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import daisyui from 'daisyui'
+console.log(daisyui)
 export default {
   content: [
 './index.html','./src/**/*.{vue,js,ts,jsx,tsx}'    
@@ -28,6 +30,11 @@ export default {
       }
     },
   },
-  plugins: [],
+  plugins: [daisyui],
+  daisyui:{
+    prefix:'daisy-',
+    themes: false,
+  }
 }
+
 

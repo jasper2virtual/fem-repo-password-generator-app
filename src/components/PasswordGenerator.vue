@@ -1,13 +1,29 @@
 <template>
     <div class="flex flex-col">
-        <div>Password Generator</div>
+        <div class=" text-app-grey text-center">Password Generator</div>
         <div>
             <!-- result -->
-            <div class=" text-app-heading-m text-app-almostWhite flex items-center bg-app-darkGrey p-4">
-                <span>PTx1f5DaFX</span><img src="/src/assets/images/icon-copy.svg" alt="copy" class="ml-auto" />
-            </div>
+            <Result :password />
 
-            <div></div>
+            <div>
+                <!-- input -->
+                <Input />
+            </div>
         </div>
     </div>
 </template>
+<script>
+import Result from './_PasswordGenerator/Result.vue'
+import Input from './_PasswordGenerator/Input.vue'
+export default{
+    components: {
+        Result,
+        Input
+    },
+    data() {
+        return {
+            password: null
+        }
+    },  
+}
+</script>
