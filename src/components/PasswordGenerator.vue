@@ -1,13 +1,32 @@
 <template>
-    <div class="flex flex-col">
+    <div class="flex flex-col gap-4">
         <div class=" text-app-grey text-center">Password Generator</div>
-        <div>
+        <div class="flex flex-col gap-4">
             <!-- result -->
             <Result :password />
 
-            <div>
+            <div class=" bg-app-darkGrey p-4 flex flex-col gap-4">
                 <!-- input -->
-                <Input />
+                <Input
+                v-model:length="length"
+                v-model:include-uppercase="includeUppercase"
+                v-model:include-lowercase="includeLowercase"
+                v-model:include-numbers="includeNumbers"
+                v-model:include-symbols="includeSymbols"
+                />
+
+                <!-- strength -->
+                <StrengthMeter :password />
+
+                <!-- generate -->
+                <button class=" w-full font-bold text-app-darkGrey bg-app-nenoGreen p-4 
+                flex flex-row flex-nowrap items-center justify-center gap-4 group
+                hover:bg-app-veryDarkGrey hover:text-app-nenoGreen hover:border hover:border-app-nenoGreen
+                "
+                >GENERATE
+                <img class=" group-hover:hidden" src="/src/assets/images/icon-arrow-right.svg" alt="" />
+                <img class=" hidden group-hover:block" src="/src/assets/images/icon-arrow-right-green.svg" alt="" />
+            </button>
             </div>
         </div>
     </div>
@@ -15,14 +34,22 @@
 <script>
 import Result from './_PasswordGenerator/Result.vue'
 import Input from './_PasswordGenerator/Input.vue'
+import StrengthMeter from './_PasswordGenerator/StrengthMeter.vue'
 export default{
     components: {
         Result,
-        Input
+        Input,
+        StrengthMeter,
     },
     data() {
         return {
-            password: null
+            password: null,
+            length:10,
+            includeUppercase: true,
+            includeLowercase: true,
+            includeNumbers: true,
+            includeSymbols: false,
+
         }
     },  
 }
