@@ -1,8 +1,8 @@
 <template>
-    <div class="flex items-center justify-between">
+    <label for="computed-length" class="flex items-center justify-between">
         <div class=" font-bold text-app-almostWhite">Character Length</div>
         <div class=" text-app-heading-m text-app-nenoGreen">{{ length }}</div>
-    </div>
+    </label>
 
     <div class="grid grid-cols-1 grid-rows-1 group">
         <div class="h-[calc(28rem/16)] flex flex-row flex-nowrap items-center col-span-full row-span-full" ref="slideContainer">
@@ -12,7 +12,8 @@
              ref="slideHandle"></div>
             <div class=" bg-app-veryDarkGrey h-[calc(8rem/16)] grow"></div>
         </div>
-        <input type="range" min="1" :max="maxLength" v-model="computedLength" class="w-full col-span-full row-span-full opacity-0 z-10" />
+        <input id="computed-length" name="computed-length" type="range" min="1" :max="maxLength" v-model="computedLength" 
+        class="w-full col-span-full row-span-full opacity-0 z-10" />
     </div>
 
 </template>
